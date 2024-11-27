@@ -1,0 +1,1 @@
+di file MythtaleFactory.php, CultureId harusnya random_int(1,20), karena kita hanya buat 20 dummy data, 2 nya lagi ada karena saya buat testing data dulu
