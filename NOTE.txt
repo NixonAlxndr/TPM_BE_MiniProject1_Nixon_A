@@ -1,0 +1,5 @@
+Untuk menjalankan seeder command nya adalah:
+php artisan db:seed --class=CategorySeeder
+php artisan db:seed --class=PostSeeder
+
+php artisan db:seed => tidak bekerja karena saya tidak memakai table user bawaan
