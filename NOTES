@@ -1,0 +1,4 @@
+Di sini ada 3 role user yang bisa masuk, 'Admin', 'Creator', dan 'Guest'. 
+Untuk menddapatkan role Admin, bikin email dengan (nama)@admin.com
+Untuk mendapatkan role Creator, bikin email dengan format (nama)@creator.com
+Selain dari 2 itu, user yang login akan masuk sebagai Guest
