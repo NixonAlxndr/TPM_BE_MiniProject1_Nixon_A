@@ -12,7 +12,7 @@
         <div class="wrapper">
             <div class="book-container inner">
                 @foreach($book as $b)
-                    <div class="book-card barlow-mediumv">
+                    <div class="book-card barlow-medium">
                         @if (filter_var($b->Image, FILTER_VALIDATE_URL))
                             <div class="book-image">
                                 <img src="{{$b->Image}}" alt="">
@@ -28,14 +28,25 @@
                             <p><b>Genre: </b>{{$b->category->CategoryName}}</p>
                             
                             <div class="flex book-btn barlow-semibold">
-                                <a status = "edit" href="{{route('Edit.Book', ['book'=>$b])}}">
-                                    <button >Edit</button>
-                                </a>
-                                <form status = "delete" action="{{ route('Delete.Book', ['book' => $b]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
+                                @if(Session::has('loginId'))
+                                    @php
+                                        $user = \App\Models\Registration::find(session('loginId'));
+                                    @endphp
+                                    @if($user->role === 'Creator')
+                                    <a status = "edit" href="{{route('Edit.Book', ['book'=>$b])}}">
+                                        <button >Edit</button>
+                                    </a>
+                                    @endif
+                                    <!-- <p>{{$user->user_name === $b->AuthorName && $user->role !== 'Guest'}}</p> -->
+                                    <!-- <p>{{$user->user_name === $b->AuthorName}}</p> -->
+                                    @if($user->role !== 'Guest')
+                                        <form status = "delete" action="{{ route('Delete.Book', ['book' => $b]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    @endif
+                                @endif
                             </div>
                         </div>
                     </div>

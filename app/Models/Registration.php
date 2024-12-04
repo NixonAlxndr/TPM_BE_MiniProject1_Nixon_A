@@ -13,6 +13,8 @@ class Registration extends Authenticatable
 
     protected $fillable = [
         'user_name',
+        'email',
         'password',
+        'role'
     ];
 }

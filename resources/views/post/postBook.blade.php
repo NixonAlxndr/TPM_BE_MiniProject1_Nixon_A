@@ -32,13 +32,13 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="image-post">
+                <div class="image-post barlow-medium">
                     <p>Choose your image</p>
                     <input type="file" name="Image">
                 </div>
                 <button class="btn-submit barlow-semibold">Submit your book</button>
             </form>
-            <div class="add-category flex">
+            <div class="add-category flex barlow-medium">
                 <p>Add category ?</p>
                 <a href="{{route("Post.Category")}}">Add here!</a>
             </div>
