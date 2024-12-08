@@ -28,14 +28,6 @@ class PostController extends Controller
             $filename = basename($filepath);
             $validatedData['Image'] = $filename;
         }
-    
-        // Post::create([
-        //     "Title" => $request->Title,
-        //     "AuthorName" => $request->AuthorName,
-        //     "Image" => $filename,
-        //     "Description" => $request->Description,
-        //     "CategoryId" => $request->CategoryId,
-        // ]);
 
         Post::create($validatedData);
 
